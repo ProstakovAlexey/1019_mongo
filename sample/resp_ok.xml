@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://socit.ru/message" xmlns:smev="http://smev.gosuslugi.ru/rev120315" xmlns:soc="http://socit.ru">
+  <soapenv:Body>
+    <mes:SocPaymentsTumenResponse>
+      <smev:Message>
+        <smev:Sender>
+          <smev:Code>АСП_01</smev:Code>
+          <smev:Name>Поставщик</smev:Name>
+        </smev:Sender>
+        <smev:Recipient>
+          <smev:Code>RPGU_01</smev:Code>
+          <smev:Name>Потребитель</smev:Name>
+        </smev:Recipient>
+        <smev:Originator>
+          <smev:Code>RPGU_01</smev:Code>
+          <smev:Name>Потребитель</smev:Name>
+        </smev:Originator>
+        <smev:ServiceName>TestMnemonic</smev:ServiceName>
+        <smev:TypeCode>GSRV</smev:TypeCode>
+        <smev:Status>RESULT</smev:Status>
+        <smev:Date>2018-06-07T14:18:06.000+3:00</smev:Date>
+        <smev:ExchangeType>2</smev:ExchangeType>
+        <smev:RequestIdRef>736d919e-6a44-11e8-b2b5-50e549cfd2c0</smev:RequestIdRef>
+        <smev:OriginRequestIdRef>736d919f-6a44-11e8-a2e3-50e549cfd2c0</smev:OriginRequestIdRef>
+      </smev:Message>
+      <smev:MessageData>
+        <smev:AppData>
+          <soc:Response>
+            <soc:HasPayment>true</soc:HasPayment>
+            <soc:Payments>
+                <soc:Payment>
+                    <soc:Date>13.03.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>1713.05</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>05.04.2017</soc:Date>
+                    <soc:Name>Компенсация роста тарифов ЖКХ</soc:Name>
+                    <soc:Pay>1528.66</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>11.05.2017</soc:Date>
+                    <soc:Name>Компенсация роста тарифов ЖКХ</soc:Name>
+                    <soc:Pay>4109.32</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>20.05.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>3179.98</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>05.08.2017</soc:Date>
+                    <soc:Name>Единовременная выплаты к праздничным датам</soc:Name>
+                    <soc:Pay>4880.0</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>17.08.2017</soc:Date>
+                    <soc:Name>Ежемесячная выплата многодетнам семьям</soc:Name>
+                    <soc:Pay>4337.08</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>18.08.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>1161.03</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>25.08.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>2252.44</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>25.08.2017</soc:Date>
+                    <soc:Name>Пособие по нуждаемости</soc:Name>
+                    <soc:Pay>537.43</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>01.09.2017</soc:Date>
+                    <soc:Name>Компенсания в связи с проживанием на загрязненной территории</soc:Name>
+                    <soc:Pay>918.16</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>04.09.2017</soc:Date>
+                    <soc:Name>Пособие по уходу за ребенком до 1.5 лет</soc:Name>
+                    <soc:Pay>1500.83</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>08.09.2017</soc:Date>
+                    <soc:Name>Единовременная выплаты к праздничным датам</soc:Name>
+                    <soc:Pay>3809.31</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>08.09.2017</soc:Date>
+                    <soc:Name>Компенсания в связи с проживанием на загрязненной территории</soc:Name>
+                    <soc:Pay>4134.44</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>22.09.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>3141.42</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>04.11.2017</soc:Date>
+                    <soc:Name>Ежемесячная выплата многодетнам семьям</soc:Name>
+                    <soc:Pay>4765.88</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>11.11.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>1761.73</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>25.11.2017</soc:Date>
+                    <soc:Name>Единовременная выплаты к праздничным датам</soc:Name>
+                    <soc:Pay>515.05</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>26.11.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>4321.91</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>01.12.2017</soc:Date>
+                    <soc:Name>Единовременная выплата по рождению ребенка</soc:Name>
+                    <soc:Pay>293.57</soc:Pay>
+                    <soc:Source>Заокский район</soc:Source>
+                </soc:Payment>
+                <soc:Payment>
+                    <soc:Date>02.12.2017</soc:Date>
+                    <soc:Name>Льгота на оплату ЖП и ЖКУ</soc:Name>
+                    <soc:Pay>3456.03</soc:Pay>
+                    <soc:Source>Венёвский район</soc:Source>
+                </soc:Payment>
+
+            </soc:Payments>
+          </soc:Response>
+        </smev:AppData>
+      </smev:MessageData>
+    </mes:SocPaymentsTumenResponse>
+  </soapenv:Body>
+</soapenv:Envelope>

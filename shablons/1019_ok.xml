@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:mes="http://socit.ru/message" xmlns:smev="http://smev.gosuslugi.ru/rev120315" xmlns:soc="http://socit.ru">
+  <soapenv:Body>
+    <mes:SocPaymentsTumenResponse>
+      <smev:Message>
+        <smev:Sender>
+          <smev:Code>{SenderCode}</smev:Code>
+          <smev:Name>{SenderName}</smev:Name>
+        </smev:Sender>
+        <smev:Recipient>
+          <smev:Code>{RecipientCode}</smev:Code>
+          <smev:Name>{RecipientName}</smev:Name>
+        </smev:Recipient>
+        <smev:Originator>
+          <smev:Code>{RecipientCode}</smev:Code>
+          <smev:Name>{RecipientName}</smev:Name>
+        </smev:Originator>
+        <smev:ServiceName>TestMnemonic</smev:ServiceName>
+        <smev:TypeCode>GSRV</smev:TypeCode>
+        <smev:Status>RESULT</smev:Status>
+        <smev:Date>{Date}</smev:Date>
+        <smev:ExchangeType>2</smev:ExchangeType>
+        <smev:RequestIdRef>{RequestId}</smev:RequestIdRef>
+        <smev:OriginRequestIdRef>{OriginalRequest}</smev:OriginRequestIdRef>
+      </smev:Message>
+      <smev:MessageData>
+        <smev:AppData>
+          <soc:Response>
+            <soc:HasPayment>true</soc:HasPayment>
+            <soc:Payments>
+{Payments}
+            </soc:Payments>
+          </soc:Response>
+        </smev:AppData>
+      </smev:MessageData>
+    </mes:SocPaymentsTumenResponse>
+  </soapenv:Body>
+</soapenv:Envelope>
