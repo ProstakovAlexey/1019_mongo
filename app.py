@@ -62,7 +62,7 @@ class Service1019:
         """Handles POST requests"""
         body = req.stream.read().decode('utf-8')
         # Анализирует запрос, пытается найти там персональные данные
-        people, err = function.analiz()
+        people, err = function.analiz(body)
         if err:
             # Возникла ошибка, не удалось извлечь какие-то данные, выдаем сообщение об ошибке
             resp.body = function.error_resp(err)
@@ -75,6 +75,7 @@ class Service1019:
                 resp.body = function.error_resp(err)
             else:
                 resp.body = function.ok_resp(bd_result)
+        resp.append_header('Content-type', 'text/xml;charset="utf-8"')
 
     @staticmethod
     def on_get(req, resp):
