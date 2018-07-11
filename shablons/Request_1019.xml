@@ -26,11 +26,11 @@
          <smev:MessageData>
             <smev:AppData>
                <soc:Request>
-	              <soc:FamilyName>#FAMILYNAME#</soc:FamilyName>
-                  <soc:FirstName>#FIRSTNAME#</soc:FirstName>
-                  <soc:Patronymic>#PATRONYMIC#</soc:Patronymic>
-                  <soc:BirthDate>#BIRTHDATE#</soc:BirthDate>
-                  <soc:Snils>#SNILS#</soc:Snils>
+	                <soc:FamilyName>{FamilyName}</soc:FamilyName>
+                  <soc:FirstName>{FirstName}</soc:FirstName>
+                  <soc:Patronymic>{Patronymic}</soc:Patronymic>
+                  <soc:BirthDate>{BirthDate}</soc:BirthDate>
+                  <soc:Snils>{Snils}</soc:Snils>
                </soc:Request>
             </smev:AppData>
          </smev:MessageData>
