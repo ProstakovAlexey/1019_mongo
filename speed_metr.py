@@ -16,7 +16,7 @@ TI['snd_name'] = 'СОЦИНФОРМТЕХ'
 TI['snd_code'] = 'SOCP01711'
 TI['oktmo'] = '70000000'
 TI['url'] = '/1019'
-TI['adr'] = 'ti'
+TI['adr'] = '192.168.0.195'
 TI['port'] = '80'
 TI['servicecode'] = '123456789'
 
@@ -29,18 +29,17 @@ shablon = smev.change(shablon, TI)
 
 def send_req(peoples):
     # Создать запрос на основе шаблона и словаря с параметрами
-    #con = http.client.HTTPConnection(TI['adr'], TI['port'])
+    con = http.client.HTTPConnection(TI['adr'], TI['port'])
     # Соединяется с веб-сервисом, игнорировать проблему с сертификатом
     #con = http.client.HTTPSConnection(TI['adr'], TI['port'], context=ssl._create_unverified_context())
-    #headers = {"Content-Type": "text/xml; charset=utf-8"}
+    headers = {"Content-Type": "text/xml; charset=utf-8"}
     for people in peoples:
         request = shablon.format(**people)
         result = None
         try:
-            pass
-            #con.request("POST", TI['url'], request.encode('utf-8'), headers=headers)
-            #result = con.getresponse().read()
-            #result = result.decode('utf-8')
+            con.request("POST", TI['url'], request.encode('utf-8'), headers=headers)
+            result = con.getresponse().read()
+            result = result.decode('utf-8')
             #print(result)
         except:
             Type, Value, Trace = sys.exc_info()
@@ -48,7 +47,7 @@ def send_req(peoples):
             print("Тип:", Type, "Значение:", Value)
             print("Выполнение будет продолжено")
             result = None
-    #con.close()
+    con.close()
     return result
 
 
