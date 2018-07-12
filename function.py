@@ -3,6 +3,8 @@ import xml.etree.ElementTree as etree
 import uuid
 import datetime
 from pymongo import MongoClient
+import glob
+import os
 
 # Прочитываем шаблоны сообщений
 with open('shablons/1019_err.xml', encoding='utf-8') as fp:
@@ -17,6 +19,7 @@ err_message = {5: 'Не указана фамилия', 10: 'Не указано
 client = MongoClient('192.168.0.195', 27017)
 db = client['1019']
 collection = db['payments']
+file_source = 'data_1019'
 
 
 def hash(famil, name, otch, bithday):
@@ -49,6 +52,28 @@ def find(hash, docum=None):
         info = collection.find_one({'_id': hash})
     except:
         err = 99
+    return info, err
+
+
+def find_json(hash):
+    """
+    Поиск в ФС по хэшу
+    :param hash:
+    :return:
+    """
+    err = 0
+    l = ''
+    info = "{ 'info': ["
+    p = os.path.join(file_source, hash[0:4], hash[4:])
+    try:
+        if os.path.exists(p):
+            l = glob.glob(p+'/*.1019')
+            for file in l:
+                with open(file, encoding='utf-8') as fp:
+                    info += fp.read() + ','
+    except:
+        err += 1
+    info += "], 'error': %s, 'found': %s}" % (err, len(l))
     return info, err
 
 

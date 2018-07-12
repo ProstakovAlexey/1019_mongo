@@ -85,6 +85,43 @@ class Service1019:
         <p>Описание сервиса - http://109.195.183.171:2121/SocPortal/Help/SMEV_SERVICE_SOCPAYMENTSTUMEN.html</p>'''
         resp.body = json.dumps(response)
 
+
+class Service1019a:
+    """
+    Выдает результат с поиском в файловой системе
+    """
+
+    @staticmethod
+    def on_post(req, resp):
+        """Handles POST requests"""
+        body = req.stream.read().decode('utf-8')
+        # Анализирует запрос, пытается найти там персональные данные
+        people, err = function.analiz(body)
+        if err:
+            # Возникла ошибка, не удалось извлечь какие-то данные, выдаем сообщение об ошибке
+            resp.body = function.error_resp(err)
+        else:
+            # Берем хэш
+            hash = function.hash(people['FamilyName'], people['FirstName'], people['Patronymic'], people['BirthDate'])
+            # Выполняем поиск в ФС
+            result, err = function.find_json(hash)
+            if err:
+                resp.body = function.error_resp(err)
+            else:
+                resp.body = json.dumps(result)
+        resp.append_header('Content-type', 'application/json; charset=utf-8')
+
+    @staticmethod
+    def on_get(req, resp):
+        """Сервис не обслуживет get запросы, поэтому тут сообщение с ошибкой"""
+        response = '''<h1>Ошибка!</h1>
+        <p>Сервис принимает только POST запросы, в соответствии со своим описание</p>
+        <p>выдает json<p>'''
+        resp.body = json.dumps(response)
+
+
 api = falcon.API()
 api.add_route('/1019', Service1019())
+api.add_route('/1019a', Service1019a())
+
 api.add_route('/static', Static())
