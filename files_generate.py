@@ -165,7 +165,7 @@ for file_name in file_list:
             dir2 += create_folder(os.path.join(result, hash[0:4], hash[4:]))
             # Создаю файлы
             files += payment_generate(os.path.join(result, hash[0:4], hash[4:]))
-            break
+            #break
     print('Создал каталогов 1-го уровня - {0}, второго уровна - {1}, файлов - {2}'.format(dir1, dir2, files))
 
 

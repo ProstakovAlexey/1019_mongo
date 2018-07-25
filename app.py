@@ -81,9 +81,9 @@ class Service1019:
     def on_get(req, resp):
         """Сервис не обслуживет get запросы, поэтому тут сообщение с ошибкой"""
         response = '''<h1>Ошибка!</h1>
-        <p>Сервис принимает только POST запросы, в соответствии со своим описание</p>
-        <p>Описание сервиса - http://109.195.183.171:2121/SocPortal/Help/SMEV_SERVICE_SOCPAYMENTSTUMEN.html</p>'''
-        resp.body = json.dumps(response)
+        <p>Сервис принимает только POST запросы, в соответствии со своим описание</p>'''
+        resp.body = response
+        resp.append_header('Content-type', 'text/html; charset=utf-8')
 
 
 class Service1019a:
@@ -115,9 +115,9 @@ class Service1019a:
     def on_get(req, resp):
         """Сервис не обслуживет get запросы, поэтому тут сообщение с ошибкой"""
         response = '''<h1>Ошибка!</h1>
-        <p>Сервис принимает только POST запросы, в соответствии со своим описание</p>
-        <p>выдает json<p>'''
-        resp.body = json.dumps(response)
+        <p>Сервис принимает только POST запросы, в соответствии со своим описание</p>'''
+        resp.body = response
+        resp.append_header('Content-type', 'text/html; charset=utf-8')
 
 
 api = falcon.API()

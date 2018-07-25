@@ -1,0 +1,14 @@
+#/bin/bash
+# Скрипт нужен для перезапуска nginx, для проверки новых конфигураций и измерений производительноти
+# 1. Останавливает nginx
+# 2. Копирует log файл, для последующего анализа.
+# 3. Очищает его лог файлы
+# 4. Запускает nginx снова
+service nginx stop
+filename='/home/user/nginx_logs/access_'`date +%Y-%m-%d_%T`'.7z'
+echo $filename
+7z a $filename /var/log/nginx/access.log
+rm /var/log/nginx/access.log
+rm /var/log/nginx/error.log
+service nginx start
+
