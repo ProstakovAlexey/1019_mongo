@@ -5,6 +5,14 @@ import datetime
 from pymongo import MongoClient
 import glob
 import os
+"""
+Содержит функции нужные для работы веб-сервиса. Такие как:
+- вычисление хеша;
+- поиск в БД mongo;
+- поиск в ФС;
+- форматирование ответа.
+"""
+
 
 # Прочитываем шаблоны сообщений
 with open('shablons/1019_err.xml', encoding='utf-8') as fp:

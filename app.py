@@ -42,6 +42,8 @@ class Static:
   </soapenv:Body>
 </soapenv:Envelope>
         """
+        resp.append_header('Content-type', 'text/xml;charset="utf-8"')
+
 
     @staticmethod
     def on_get(req, resp):
